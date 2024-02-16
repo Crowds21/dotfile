@@ -1,7 +1,7 @@
 *
 ## Include
 !.gitignore
-! kitty/
-! yabai/
-! karabiner/
-! nvim/
+!kitty/
+!yabai/
+!karabiner/
+!nvim/
