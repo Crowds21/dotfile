@@ -1,0 +1,58 @@
+#!/usr/bin/env sh
+###
+### Yabai configuration
+###
+sudo yabai --load-sa
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+
+# GLOBAL settings
+# mouse
+yabai -m config mouse_follows_focus          on 
+yabai -m config focus_follows_mouse          autofocus
+#
+yabai -m config window_origin_display        default
+yabai -m config window_placement             second_child
+yabai -m config window_shadow                float 
+
+yabai -m config split_ratio                  0.50
+yabai -m config auto_balance                 on
+# functions when using modifier + mouse 
+yabai -m config mouse_modifier               fn
+yabai -m config mouse_action1                move
+yabai -m config mouse_action2                resize
+yabai -m config mouse_drop_action            stack 
+
+# border REMOCED
+# yabai -m config window_border                   on
+# yabai -m config window_border_width             6
+# yabai -m config active_window_border_color      0xff3399cc
+# yabai -m config normal_window_border_color      0x00ffffff
+# yabai -m config insert_feedback_color           0xffd75f5f
+
+# general space settings bsp stack float
+yabai -m config layout                       bsp
+
+# Padding
+# mac top bar height 35
+# mac down bar height 20
+yabai -m config top_padding                  10
+yabai -m config bottom_padding               30
+yabai -m config left_padding                 10
+yabai -m config right_padding                10
+yabai -m config window_gap                   10
+#Rules
+yabai -m rule --add app="^QQ$"                  manage=off
+yabai -m rule --add app="^WeChat$"              manage=off
+yabai -m rule --add app="^System Preferences$"  manage=off
+yabai -m rule --add app="^licecap$"             manage=off
+yabai -m rule --add app="^Finder$"              manage=off
+yabai -m rule --add app="MAA"                   manage=off
+yabai -m rule --add app="明日方舟"              manage=off
+yabai -m rule -add  app="PlayCover"             manage=off
+yabai -m rule --add app="System Preferences"    manage=off
+yabai -m rule --add app="系统设置"              manage=off
+yabai -m rule --add app="^Intellij IDEA$" title="^Settings$" manage=off
+yabai -m rule --add app="Clash" manage=off
+
+echo "yabai configuration loaded.."
+# .. more yabai startup stuff

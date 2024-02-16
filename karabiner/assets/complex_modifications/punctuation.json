@@ -1,0 +1,35 @@
+{
+  "title": "punctuation",
+  "description": "Map Punctuations",
+  "rules": [
+    {
+      "manipulators": {
+        "type": "base",
+        "from": {
+          "key_code": "f",
+          "modifiers": {
+            "mandatory": ["fn"]
+          }
+        },
+        "to": "quote"
+      }
+    },
+    {
+      "manipulators": {
+        "type": "base",
+        "from": {
+          "key_code": "g",
+          "modifiers": {
+            "mandatory": ["fn"]
+          }
+        },
+        "to": [
+          {
+            "key_code": "quote",
+            "modifiers": ["left_shift"]
+          }
+        ]
+      }
+    }
+  ]
+}
