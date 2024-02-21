@@ -1,0 +1,74 @@
+""" Leader
+let mapleader=" "
+""" Plugin
+set which-key
+set surround
+set multiple-cursors
+set commentary
+set argtextobj
+set textobj-entire
+set ReplaceWithRegister
+set NERDTree
+set which-key
+set notimeout
+
+""" Input method exchange
+set keep-english-in-normal
+set keep-english-in-normal-and-restore-in-insert
+
+""" Plugin settings
+let g:argtextobj_pairs="[:],(:),{:}"
+""" NERDTree
+nmap <leader>e :NERDTreeToggle<CR>
+nmap <leader>o :NERDTreeFocus<CR>
+""" nmap   :NERDTreeFind<CR>
+""" use `q` to quit from NERDTree
+set timeoutlen=4000
+
+""" Options
+set hlsearch
+set showmode
+set so=5
+set incsearch
+""" set relativenumber
+""" using system clipboard
+set clipboard+=unnamed
+""" Idea specific settings
+set ideajoin
+set ideastatusicon=gray
+set idearefactormode=keep
+
+""" Navigation-buffer
+nmap ]b :bnext<CR>
+nmap [b :bprevious<CR>
+nmap <leader>c :bd<CR>
+""" Navigation-Window
+nmap <C-h>  <C-w>h
+nmap <C-j>  <C-w>j
+nmap <C-k>  <C-w>k
+nmap <C-l>  <C-w>l
+nmap \| :vsplit<cr>
+nmap \\ :split<cr>
+
+""" Navigation-Coding
+nmap [m <Action>(MethodUp)
+nmap ]m <Action>(MethodDown)
+map gd <Action>(GotoDeclaration)
+
+"""  Lsp
+nmap <leader>k <Action>(QuickJavaDoc)
+nmap <leader>lr <Action>(RenameElement)
+nmap <leader>ls <Action>(FileStructurePopup)
+nmap <leader>lf <Action>(ReformatCode)
+nmap gl <Action>(ShowErrorDescription)
+nmap gd <Action>(GotoDeclarationOnly)
+nmap gi <Action>(GotoImplementation)
+
+nmap ]d <Action>(GotoNextError)
+nmap [d <Action>(GotoPreviousError)
+nmap <leader>/ <Action>(CommentByLineComment)
+nmap <leader>ff <Action>(FindInPath)
+""" Idea MappingAs
+" Use ctrl-c as an ide shortcut in normal and visual modes
+sethandler <C-C> n-v:ide i:vim
+
