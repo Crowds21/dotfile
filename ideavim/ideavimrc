@@ -37,9 +37,9 @@ set timeoutlen=4000
 
 """ Options
 set hlsearch
+set incsearch
 set showmode
 set so=5
-set incsearch
 """ set relativenumber
 """ using system clipboard
 set clipboard+=unnamed
