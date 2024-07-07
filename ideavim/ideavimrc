@@ -75,10 +75,10 @@ nmap <leader>k <Action>(QuickJavaDoc)
 nmap <leader>lr <Action>(RenameElement)
 nmap <leader>ls <Action>(FileStructurePopup)
 nmap <leader>lf <Action>(ReformatCode)
-nmap <learder>la <Action>(ShowIntentionActions)
+nmap <leader>la <Action>(ShowIntentionActions)
 " Comment
 nmap <leader>/ <Action>(CommentByLineComment)
-vmap <learder>/ <Action>(CommentByLineComment)
+vmap <leader>/ <Action>(CommentByLineComment)
 " Search
 nmap <leader>ff <Action>(FindInPath)
 """ Idea MappingAs
