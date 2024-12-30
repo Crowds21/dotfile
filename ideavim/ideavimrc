@@ -1,7 +1,30 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=5
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+
+
 """ Leader
 let mapleader=" "
 """ Plugin
-set which-key
 set surround
 set multiple-cursors
 set commentary
@@ -23,11 +46,11 @@ let g:argtextobj_pairs="[:],(:),{:}"
 " 5s 内输入视为一个序列
 set timeoutlen=5000
 " show vim actions
-let g:WhichKey_ShowVimActions="true"
+" let g:WhichKey_ShowVimActions="true"
+let g:WhichKey_ShowTypedSequence = "true"
 " Popup delay
 let g:WhichKey_DefaultDelay=1000
-" prefixes
-let g:WhichKeyDesc_lsp="<Space>l Lsp"
+
 """ NERDTree
 nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>o :NERDTreeFocus<CR>
@@ -36,6 +59,8 @@ nmap <leader>o :NERDTreeFocus<CR>
 set timeoutlen=4000
 
 """ Options
+set number
+set relativenumber
 set hlsearch
 set incsearch
 set showmode
@@ -49,16 +74,22 @@ set ideastatusicon=gray
 set idearefactormode=keep
 
 """ Navigation-buffer
+let g:WhichKeyDesc_buffer="<Space>b Buffer"
 nmap ]b :bnext<CR>
 nmap [b :bprevious<CR>
 nmap <leader>c :bd<CR>
+nmap <leader>bc <Action>(CloseContent)
+nmap <leader>bC <Action>(CloseAllEditorsButActive)
+
 """ Navigation-Window
+let g:WhichKeyDesc_window="<Space>w Window"
 nmap <C-h>  <C-w>h
 nmap <C-j>  <C-w>j
 nmap <C-k>  <C-w>k
 nmap <C-l>  <C-w>l
 nmap \| :vsplit<cr>
 nmap \\ :split<cr>
+nmap <leader>ws <Action>(HideActiveWindow)
 
 """ Navigation-Coding
 nmap [m <Action>(MethodUp)
@@ -70,18 +101,27 @@ nmap gi <Action>(GotoImplementation)
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 
+""" VCS
+let g:WhichKeyDesc_git="<Space>w Git"
+nmap <leader>ga <Action>(Annotate)
+
 """  Lsp
+let g:WhichKeyDesc_lsp="<Space>l Lsp"
 nmap <leader>k <Action>(QuickJavaDoc)
 nmap <leader>lr <Action>(RenameElement)
 nmap <leader>ls <Action>(FileStructurePopup)
 nmap <leader>lf <Action>(ReformatCode)
 nmap <leader>la <Action>(ShowIntentionActions)
+nmap <leader>ly <Action>(TypeHierarchyPopupMenu)
+
+
 " Comment
 nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)
 " Search
 nmap <leader>ff <Action>(FindInPath)
-""" Idea MappingAs
+nmap <leader>fw <Action>(Find)
+""" Idea Mappings
 " Use ctrl-c as an ide shortcut in normal and visual modes
 sethandler <C-C> n-v:ide i:vim
 
