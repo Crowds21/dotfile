@@ -59,8 +59,15 @@ nmap <C-k>  <C-w>k
 nmap <C-l>  <C-w>l
 nmap \| :vsplit<cr>
 nmap \\ :split<cr>
+nmap <C-w>o <Action>(ClosedAllEditorsButActive) 
 
-""" Navigation-Coding
+"""  Lsp
+nmap <leader>k <Action>(QuickJavaDoc)
+nmap <leader>lr <Action>(RenameElement)
+nmap <leader>ls <Action>(FileStructurePopup)
+nmap <leader>lf <Action>(ReformatCode)
+nmap <leader>la <Action>(ShowIntentionActions)
+" Movement
 nmap [m <Action>(MethodUp)
 nmap ]m <Action>(MethodDown)
 map gd <Action>(GotoDeclaration)
@@ -70,17 +77,19 @@ nmap gi <Action>(GotoImplementation)
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
 
-"""  Lsp
-nmap <leader>k <Action>(QuickJavaDoc)
-nmap <leader>lr <Action>(RenameElement)
-nmap <leader>ls <Action>(FileStructurePopup)
-nmap <leader>lf <Action>(ReformatCode)
-nmap <leader>la <Action>(ShowIntentionActions)
+"""" Debug
+nmap <leader>cm <Action>(XDebugger.MuteBreakpoints)
 " Comment
 nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)
 " Search
 nmap <leader>ff <Action>(FindInPath)
+""" Git
+" Current file
+nmap <leader>gC <Action>(Vcs.ShowTabbedFileHistory)
+" Current repo
+nmap <leader>gc <Action>(Vcs.Show.Log)
+
 """ Idea MappingAs
 " Use ctrl-c as an ide shortcut in normal and visual modes
 sethandler <C-C> n-v:ide i:vim
