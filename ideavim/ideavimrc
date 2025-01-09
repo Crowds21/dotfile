@@ -52,7 +52,6 @@ nmap <leader>e :NERDTreeToggle<CR>
 nmap <leader>o :NERDTreeFocus<CR>
 """ nmap   :NERDTreeFind<CR>
 """ use `q` to quit from NERDTree
-set timeoutlen=4000
 
 """ Options
 set number
@@ -61,7 +60,6 @@ set hlsearch
 set incsearch
 set showmode
 set so=5
-""" set relativenumber
 """ using system clipboard
 set clipboard+=unnamed
 """ Idea specific settings
@@ -131,6 +129,7 @@ nmap <leader>/ <Action>(CommentByLineComment)
 vmap <leader>/ <Action>(CommentByLineComment)
 " Search
 nmap <leader>ff <Action>(FindInPath)
+nmap <leader>fF <Action>(SearchEverywhere)
 nmap <leader>fw <Action>(Find)
 
 " Intelij
