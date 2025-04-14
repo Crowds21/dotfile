@@ -99,6 +99,9 @@ nmap gd <Action>(GotoDeclarationOnly)
 nmap gi <Action>(GotoImplementation)
 nmap ]d <Action>(GotoNextError)
 nmap [d <Action>(GotoPreviousError)
+nmap ]v <Action>(VcsShowNextChangeMarker)
+nmap [v <Action>(VcsShowPrevChangeMarker)
+
 
 """" Debug
 nmap <leader>dm <Action>(XDebugger.MuteBreakpoints)
