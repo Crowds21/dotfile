@@ -72,6 +72,7 @@ nmap [b :bprevious<CR>
 nnoremap <leader>c :bd<CR>
 nmap <leader>bc <Action>(CloseContent)
 nmap <leader>bC <Action>(CloseAllEditorsButActive)
+nmap <leader>bp <Action>(PinActiveEditorTab)
 
 """ Navigation-Window
 let g:WhichKeyDesc_window="<Space>w Window"
@@ -87,7 +88,8 @@ nmap <leader>ws <Action>(HideActiveWindow)
 """  Lsp
 nmap <leader>k <Action>(QuickJavaDoc)
 nmap <leader>lr <Action>(RenameElement)
-nmap <leader>ls <Action>(FileStructurePopup)
+" TODO symbol search
+nmap <leader>lS <Action>(FileStructurePopup)
 nmap <leader>lf <Action>(ReformatCode)
 nmap <leader>la <Action>(ShowIntentionActions)
 " Movement
