@@ -19,6 +19,7 @@ Plug 'tpope/vim-commentary'
 
 """ Leader
 let mapleader=" "
+nmap <leader>qq <Action>(IdeaVim.ReloadVimRc.reload)
 
 """ Plugin
 set surround
@@ -107,6 +108,8 @@ nmap [v <Action>(VcsShowPrevChangeMarker)
 
 """" Debug
 nmap <leader>dm <Action>(XDebugger.MuteBreakpoints)
+nmap <leader>db <Action>(ToggleLineBreakpoint)
+nmap <leader>dc <Action>(Debug)
 
 """ VCS
 let g:WhichKeyDesc_git="<Space>w Git"
